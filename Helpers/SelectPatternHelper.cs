@@ -1,5 +1,5 @@
 using Interfaces;
-using Examples;
+using Examples.Strategy;
 
 namespace Helpers {
   public static class SelectPatternHelper {
