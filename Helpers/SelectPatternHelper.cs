@@ -3,6 +3,7 @@ using Examples.Observer;
 using Examples.Strategy;
 using Examples.Decorator;
 using Examples.FactoryMethod;
+using Examples.AbstractFactory;
 
 namespace Helpers {
   public static class SelectPatternHelper {
@@ -26,8 +27,9 @@ namespace Helpers {
       Console.WriteLine("1. Observer");
       Console.WriteLine("2. Decorator");
       Console.WriteLine("3. Factory Method");
+      Console.WriteLine("4. Abstract Factory");
     }
-    private static bool optionIsValid(int option) => 0 <= option && option < 4;
+    private static bool optionIsValid(int option) => 0 <= option && option < 5;
 
     private static IDesignPatternExample BuildPatternExample(int option) {
       switch (option) {
@@ -37,6 +39,8 @@ namespace Helpers {
           return new DecoratorPattern();
         case 3:
           return new FactoryMethodPattern();
+        case 4:
+          return new AbstractFactoryPattern();
         default:
           return new StrategyPattern();
       }
