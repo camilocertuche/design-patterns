@@ -5,6 +5,7 @@ using Examples.Decorator;
 using Examples.FactoryMethod;
 using Examples.AbstractFactory;
 using Examples.Singleton;
+using Examples.Command;
 
 namespace Helpers {
   public static class SelectPatternHelper {
@@ -30,8 +31,9 @@ namespace Helpers {
       Console.WriteLine("3. Factory Method");
       Console.WriteLine("4. Abstract Factory");
       Console.WriteLine("5. Singleton");
+      Console.WriteLine("6. Command");
     }
-    private static bool optionIsValid(int option) => 0 <= option && option <= 5;
+    private static bool optionIsValid(int option) => 0 <= option && option <= 6;
 
     private static IDesignPatternExample BuildPatternExample(int option) {
       switch (option) {
@@ -45,6 +47,8 @@ namespace Helpers {
           return new AbstractFactoryPattern();
         case 5:
           return new SingletonPattern();
+        case 6:
+          return new CommandPattern();
         default:
           return new StrategyPattern();
       }
