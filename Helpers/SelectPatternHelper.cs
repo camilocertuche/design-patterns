@@ -7,6 +7,7 @@ using Examples.AbstractFactory;
 using Examples.Singleton;
 using Examples.Command;
 using Examples.Adapter;
+using Examples.Facade;
 
 namespace Helpers {
   public static class SelectPatternHelper {
@@ -34,8 +35,9 @@ namespace Helpers {
       Console.WriteLine("5. Singleton");
       Console.WriteLine("6. Command");
       Console.WriteLine("7. Adapter");
+      Console.WriteLine("8. Facade");
     }
-    private static bool optionIsValid(int option) => 0 <= option && option <= 7;
+    private static bool optionIsValid(int option) => 0 <= option && option <= 8;
 
     private static IDesignPatternExample BuildPatternExample(int option) {
       switch (option) {
@@ -53,6 +55,8 @@ namespace Helpers {
           return new CommandPattern();
         case 7:
           return new AdapterPattern();
+        case 8:
+          return new FacadePattern();
         default:
           return new StrategyPattern();
       }
