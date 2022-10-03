@@ -9,6 +9,7 @@ using Examples.Command;
 using Examples.Adapter;
 using Examples.Facade;
 using Examples.Proxy;
+using Examples.Bridge;
 
 namespace Helpers {
   public static class SelectPatternHelper {
@@ -38,8 +39,9 @@ namespace Helpers {
       Console.WriteLine("7. Adapter");
       Console.WriteLine("8. Facade");
       Console.WriteLine("9. Proxy");
+      Console.WriteLine("10. Bridge");
     }
-    private static bool optionIsValid(int option) => 0 <= option && option <= 9;
+    private static bool optionIsValid(int option) => 0 <= option && option <= 10;
 
     private static IDesignPatternExample BuildPatternExample(int option) {
       switch (option) {
@@ -61,6 +63,8 @@ namespace Helpers {
           return new FacadePattern();
         case 9:
           return new ProxyPattern();
+        case 10:
+          return new BridgePattern();
         default:
           return new StrategyPattern();
       }
